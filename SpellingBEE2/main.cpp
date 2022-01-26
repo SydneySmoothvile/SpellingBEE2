@@ -1,31 +1,66 @@
 #include <windows.h>  // For MS Windows
+#include<GL/gl.h>
+#include <GL/glu.h>
 #include <GL/glut.h>  // GLUT, includes glu.h and gl.h
 
-/* Handler for window-repaint event. Call back when the window first appears and
-   whenever the window needs to be re-painted. */
-    void display() {
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
-    glClear(GL_COLOR_BUFFER_BIT);         // Clear the color buffer
 
-    // Draw a Red 1x1 Square centered at origin
-    glBegin(GL_QUADS);              // Each set of 4 vertices form a quad
-    glColor3f(1.0f, 0.0f, 0.0f); // Red
-    glVertex2f(-0.5f, -0.5f);    // x, y
-    glVertex2f(0.5f, -0.5f);
-    glVertex2f(0.5f, 0.5f);
-    glVertex2f(-0.5f, 0.5f);
-    glEnd();
+void display();
+void reshape(int, int);
 
-    glFlush();  // Render now
+void init() {
+	glClearColor(0.0, 0.0, 0.0, 1.0);
 }
 
-/* Main function: GLUT runs as a console application starting at main()  */
-int main(int argc, char** argv) {
-    glutInit(&argc, argv);                 // Initialize GLUT
-    glutCreateWindow("OpenGL Setup Test"); // Create a window with the given title
-    glutInitWindowSize(320, 320);   // Set the window's initial width & height
-    glutInitWindowPosition(50, 50); // Position the window's initial top-left corner
-    glutDisplayFunc(display); // Register display callback handler for window re-paint
-    glutMainLoop();           // Enter the infinitely event-processing loop
-    return 0;
+int main(int argc, char** argv)
+{
+
+	glutInit(&argc, argv);
+	glutInitDisplayMode(GLUT_RGB);
+
+	glutInitWindowPosition(200,100);
+	glutInitWindowSize(700, 500);
+
+	
+	glutCreateWindow("SpellingBEE Game");
+
+	glutDisplayFunc(display);
+	glutReshapeFunc(reshape);
+	init();
+
+	glutMainLoop();
+
+
+}
+
+void display() {
+
+	glClear(GL_COLOR_BUFFER_BIT);
+	glLoadIdentity();
+
+	//draw
+	glBegin(GL_POLYGON);
+
+	glVertex2f(3.0, 3.0);
+	glVertex2f(-3.0, 3.0);
+	glVertex2f(-3.0, -3.0);
+	glVertex2f(3.0, -3.0);
+
+
+	glEnd();
+
+	glFlush();
+}
+
+void reshape(int w, int h) 
+{
+	//viewport
+	glViewport(0,0,(GLsizei)w,(GLsizei)h);
+
+	//projection
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluOrtho2D(-5, 5, -7, 7);
+	glMatrixMode(GL_MODELVIEW);
+	
+
 }
