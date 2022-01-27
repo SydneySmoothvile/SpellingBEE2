@@ -133,11 +133,20 @@ void gameDisplay()
 
 	//Exit game
 	glColor3f(1, 1, 1);
-	glRasterPos3f(-0.5, -0.8, 0);
+	glRasterPos3d(-0.85, -0.8, 0);
 
-	char exit[] = " Press X to go back to main menu ";
+	char exit[] = " Press X for main menu ";
 	for (int i = 0; i < strlen(exit); i++) {
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, exit[i]);
+		glutSwapBuffers();
+	}
+
+	//Next Page
+	glColor3f(1, 1, 1);
+	glRasterPos3d(0.05, -0.8, 0);
+	char next[] = " Press Z for next page ";
+	for (int i = 0; i < strlen(next); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, next[i]);
 		glutSwapBuffers();
 	}
 	
