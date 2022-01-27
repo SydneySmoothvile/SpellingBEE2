@@ -6,11 +6,57 @@
 
 
 void display();
-void gameDisplay();
+void gameDisplay1();
+void gameDisplay2();
+void gameDisplay3();
+void gameDisplay4();
+void gameDisplay5();
+void gameDisplay6();
+void gameDisplay7();
+void gameDisplay8();
+void gameDisplay9();
+void gameDisplay10();
 void reshape(int, int);
 
 void init() {
 	glClearColor(0.0, 0.0, 0.0, 1.0);
+}
+
+void keys(unsigned char key, int x, int y)
+{
+	if (key == 'x')
+		glutDisplayFunc(display);
+	glutPostRedisplay();
+	if (key == '1')
+		glutDisplayFunc(gameDisplay1);
+	glutPostRedisplay();
+	if (key == '2')
+		glutDisplayFunc(gameDisplay2);
+	glutPostRedisplay();
+	if (key == '3')
+		glutDisplayFunc(gameDisplay3);
+	glutPostRedisplay();
+	if (key == '4')
+		glutDisplayFunc(gameDisplay4);
+	glutPostRedisplay();
+	if (key == '5')
+		glutDisplayFunc(gameDisplay5);
+	glutPostRedisplay();
+	if (key == '6')
+		glutDisplayFunc(gameDisplay6);
+	glutPostRedisplay();
+	if (key == '7')
+		glutDisplayFunc(gameDisplay7);
+	glutPostRedisplay();
+	if (key == '8')
+		glutDisplayFunc(gameDisplay8);
+	glutPostRedisplay();
+	if (key == '9')
+		glutDisplayFunc(gameDisplay9);
+	glutPostRedisplay();
+	if (key == '0')
+		glutDisplayFunc(gameDisplay10);
+	glutPostRedisplay();
 }
 
 int main(int argc, char** argv)
@@ -25,8 +71,11 @@ int main(int argc, char** argv)
 	
 	glutCreateWindow("SpellingBEE Game");
 
-	glutDisplayFunc(gameDisplay);
+	glutDisplayFunc(display);
+	//glutDisplayFunc(gameDisplay1);
 	// glutReshapeFunc(reshape);
+	glutKeyboardFunc(keys);
+	
 	init();
 
 	glutMainLoop();
@@ -36,37 +85,17 @@ int main(int argc, char** argv)
 
 void display() {
 
-	glClear(GL_COLOR_BUFFER_BIT);
-	glLoadIdentity();
-
-	//draw
-	glBegin(GL_POLYGON);
-
-	glVertex2f(3.0, 3.0);
-	glVertex2f(-3.0, 3.0);
-	glVertex2f(-3.0, -3.0);
-	glVertex2f(3.0, -3.0);
-
-
-	glEnd();
-
-	glFlush();
-}
-
-void gameDisplay()
-{
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	//glLoadIdentity();
 
 	glColor3f(1, 1, 1);
 	glRasterPos3f(-0.5, 0.6, 0);
-
-	char question[] = "Choose the correct spelling ";
-	for (int i = 0; i < strlen(question); i++) {
-		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, question[i]);
+	char mainmenu[] = "Welcome to Spelling Bee ";
+	for (int i = 0; i < strlen(mainmenu); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, mainmenu[i]);
 		glutSwapBuffers();
 	}
-
-	//square
+	//draw
 	glBegin(GL_POLYGON);
 
 	glVertex2f(0.5, 0.5);
@@ -74,85 +103,18 @@ void gameDisplay()
 	glVertex2f(-0.5, -0.5);
 	glVertex2f(0.5, -0.5);
 
-
-	glEnd();
-
-	glFlush();
-
-	//question one
-	char choice1[] = "A. acommodate";
-	char choice2[] = "B. accommodate";
-	char choice3[] = "C. acommodete";
-	char choice4[] = "D. accomodate";
-
-
-	/*string select[] = { choice1,choice2,choice3,choice4 };
-
-	for (int j = 0; j < 3; j++) {
-		for (int i = 0; i < strlen(select[j]); i++) {
-		string choice=select[j];
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, choice[i]);
-		glutSwapBuffers();
-	}
-	}*/
-
-	glColor3f(0, 0, 0);
-
-	//choice A
-	glRasterPos3d(-0.45, 0.20, 0);
-
-	for (int i = 0; i < strlen(choice1); i++) {
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, choice1[i]);
-		glutSwapBuffers();
-	}
-
-	//choice B
-	glRasterPos3d(0.05, 0.20, 0);
-
-	for (int i = 0; i < strlen(choice2); i++) {
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, choice2[i]);
-		glutSwapBuffers();
-	}
-
-	//choice C
-	glRasterPos3d(-0.45, -0.20, 0);
-
-	for (int i = 0; i < strlen(choice3); i++) {
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, choice3[i]);
-		glutSwapBuffers();
-	}
-
-	//choice D
-	glRasterPos3d(0.05, -0.20, 0);
-
-	for (int i = 0; i < strlen(choice4); i++) {
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, choice4[i]);
-		glutSwapBuffers();
-	}
-	
-
-	//Exit game
-	glColor3f(1, 1, 1);
-	glRasterPos3d(-0.85, -0.8, 0);
-
-	char exit[] = " Press X for main menu ";
-	for (int i = 0; i < strlen(exit); i++) {
-		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, exit[i]);
-		glutSwapBuffers();
-	}
-
-	//Next Page
-	glColor3f(1, 1, 1);
-	glRasterPos3d(0.05, -0.8, 0);
-	char next[] = " Press Z for next page ";
+	//to start Page
+	glColor3f(1, 0, 0);
+	glRasterPos3f(-0.0, -0.0, 0);
+	char next[] = " Press 1 to Start ";
 	for (int i = 0; i < strlen(next); i++) {
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, next[i]);
 		glutSwapBuffers();
 	}
-	
-	
 
-	
+	glEnd();
+
+	glFlush();
 }
 
 void reshape(int w, int h) 
@@ -168,3 +130,4 @@ void reshape(int w, int h)
 	
 
 }
+
