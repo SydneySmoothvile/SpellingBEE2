@@ -99,6 +99,15 @@ void gameDisplay1()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+	//page title
+	glColor3f(1, 1, 1);
+	glRasterPos3f(-0.85, 0.8, 0);
+	char mainmenu[] = "Spelling BEE ";
+	for (int i = 0; i < strlen(mainmenu); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, mainmenu[i]);
+		glutSwapBuffers();
+	}
+
 	glColor3f(1, 1, 1);
 	glRasterPos3f(-0.5, 0.6, 0);
 
@@ -179,16 +188,16 @@ void gameDisplay1()
 
 	char exit[] = " Press X to go back to main menu ";
 	for (int i = 0; i < strlen(exit); i++) {
-		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, exit[i]);
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, exit[i]);
 		glutSwapBuffers();
 	}
 
 	//Next Page
 	glColor3f(1, 1, 1);
-	glRasterPos3f(-0.5, -1.0, 0);
+	glRasterPos3f(-0.5, -0.9, 0);
 	char next[] = " Press 2 to go back to next page ";
 	for (int i = 0; i < strlen(next); i++) {
-		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, next[i]);
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, next[i]);
 		glutSwapBuffers();
 	}
 
@@ -199,6 +208,14 @@ void gameDisplay1Answer()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	glColor3f(1, 1, 1);
+	glRasterPos3f(-0.85, 0.8, 0);
+	char mainmenu[] = "Spelling BEE ";
+	for (int i = 0; i < strlen(mainmenu); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, mainmenu[i]);
+		glutSwapBuffers();
+	}
+
+	glColor3f(1, 1, 1);
 	glRasterPos3f(-0.5, 0.6, 0);
 
 	char question[] = "Choose the correct spelling ";
@@ -280,16 +297,16 @@ void gameDisplay1Answer()
 
 	char exit[] = " Press X to go back to main menu ";
 	for (int i = 0; i < strlen(exit); i++) {
-		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, exit[i]);
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, exit[i]);
 		glutSwapBuffers();
 	}
 
 	//Next Page
 	glColor3f(1, 1, 1);
-	glRasterPos3f(-0.5, -1.0, 0);
+	glRasterPos3f(-0.5, -0.9, 0);
 	char next[] = " Press 2 to go back to next page ";
 	for (int i = 0; i < strlen(next); i++) {
-		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, next[i]);
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, next[i]);
 		glutSwapBuffers();
 	}
 
@@ -300,6 +317,14 @@ void gameDisplay1Wrong()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	glColor3f(1, 1, 1);
+	glRasterPos3f(-0.85, 0.8, 0);
+	char mainmenu[] = "Spelling BEE ";
+	for (int i = 0; i < strlen(mainmenu); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, mainmenu[i]);
+		glutSwapBuffers();
+	}
+
+	glColor3f(1, 1, 1);
 	glRasterPos3f(-0.5, 0.6, 0);
 
 	char question[] = "Choose the correct spelling ";
@@ -381,16 +406,16 @@ void gameDisplay1Wrong()
 
 	char exit[] = " Press X to go back to main menu ";
 	for (int i = 0; i < strlen(exit); i++) {
-		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, exit[i]);
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, exit[i]);
 		glutSwapBuffers();
 	}
 
 	//Next Page
 	glColor3f(1, 1, 1);
-	glRasterPos3f(-0.5, -1.0, 0);
+	glRasterPos3f(-0.5, -0.9, 0);
 	char next[] = " Press 2 to go back to next page ";
 	for (int i = 0; i < strlen(next); i++) {
-		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, next[i]);
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, next[i]);
 		glutSwapBuffers();
 	}
 
@@ -400,6 +425,15 @@ void gameDisplay1Wrong()
 void gameDisplay2()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	//page title
+	glColor3f(1, 1, 1);
+	glRasterPos3f(-0.85, 0.8, 0);
+	char mainmenu[] = "Spelling BEE ";
+	for (int i = 0; i < strlen(mainmenu); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, mainmenu[i]);
+		glutSwapBuffers();
+	}
 
 	glColor3f(1, 1, 1);
 	glRasterPos3f(-0.5, 0.6, 0);
@@ -481,16 +515,16 @@ void gameDisplay2()
 
 	char exit[] = " Press X to go back to main menu ";
 	for (int i = 0; i < strlen(exit); i++) {
-		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, exit[i]);
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, exit[i]);
 		glutSwapBuffers();
 	}
 
 	//Next Page
 	glColor3f(1, 1, 1);
-	glRasterPos3f(-0.5, -1.0, 0);
+	glRasterPos3f(-0.5, -0.9, 0);
 	char next[] = " Press 3 to go back to next page ";
 	for (int i = 0; i < strlen(next); i++) {
-		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, next[i]);
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, next[i]);
 		glutSwapBuffers();
 	}
 
@@ -906,6 +940,16 @@ void gameDisplay3Wrong()
 
 void gameDisplay3()
 {
+
+	//page title
+	glColor3f(1, 1, 1);
+	glRasterPos3f(-0.85, 0.8, 0);
+	char mainmenu[] = "Spelling BEE ";
+	for (int i = 0; i < strlen(mainmenu); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, mainmenu[i]);
+		glutSwapBuffers();
+	}
+
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	glColor3f(1, 1, 1);
@@ -988,16 +1032,16 @@ void gameDisplay3()
 
 	char exit[] = " Press X to go back to main menu ";
 	for (int i = 0; i < strlen(exit); i++) {
-		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, exit[i]);
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, exit[i]);
 		glutSwapBuffers();
 	}
 
 	//Next Page
 	glColor3f(1, 1, 1);
-	glRasterPos3f(-0.5, -1.0, 0);
+	glRasterPos3f(-0.5, -0.9, 0);
 	char next[] = " Press 4 to go to next page ";
 	for (int i = 0; i < strlen(next); i++) {
-		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, next[i]);
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, next[i]);
 		glutSwapBuffers();
 	}
 
@@ -1007,6 +1051,15 @@ void gameDisplay3()
 void gameDisplay4()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	//page title
+	glColor3f(1, 1, 1);
+	glRasterPos3f(-0.85, 0.8, 0);
+	char mainmenu[] = "Spelling BEE ";
+	for (int i = 0; i < strlen(mainmenu); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, mainmenu[i]);
+		glutSwapBuffers();
+	}
 
 	glColor3f(1, 1, 1);
 	glRasterPos3f(-0.5, 0.6, 0);
@@ -1088,16 +1141,16 @@ void gameDisplay4()
 
 	char exit[] = " Press X to go back to main menu ";
 	for (int i = 0; i < strlen(exit); i++) {
-		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, exit[i]);
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, exit[i]);
 		glutSwapBuffers();
 	}
 
 	//Next Page
 	glColor3f(1, 1, 1);
-	glRasterPos3f(-0.5, -1.0, 0);
+	glRasterPos3f(-0.5, -0.9, 0);
 	char next[] = " Press 5 to next page ";
 	for (int i = 0; i < strlen(next); i++) {
-		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, next[i]);
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, next[i]);
 		glutSwapBuffers();
 	}
 
@@ -1107,6 +1160,15 @@ void gameDisplay4()
 void gameDisplay5()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	//page title
+	glColor3f(1, 1, 1);
+	glRasterPos3f(-0.85, 0.8, 0);
+	char mainmenu[] = "Spelling BEE ";
+	for (int i = 0; i < strlen(mainmenu); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, mainmenu[i]);
+		glutSwapBuffers();
+	}
 
 	glColor3f(1, 1, 1);
 	glRasterPos3f(-0.5, 0.6, 0);
@@ -1188,16 +1250,16 @@ void gameDisplay5()
 
 	char exit[] = " Press X to go back to main menu ";
 	for (int i = 0; i < strlen(exit); i++) {
-		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, exit[i]);
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, exit[i]);
 		glutSwapBuffers();
 	}
 
 	//Next Page
 	glColor3f(1, 1, 1);
-	glRasterPos3f(-0.5, -1.0, 0);
+	glRasterPos3f(-0.5, -0.9, 0);
 	char next[] = " Press 6 to next page ";
 	for (int i = 0; i < strlen(next); i++) {
-		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, next[i]);
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, next[i]);
 		glutSwapBuffers();
 	}
 
@@ -1207,6 +1269,15 @@ void gameDisplay5()
 void gameDisplay6()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	//page title
+	glColor3f(1, 1, 1);
+	glRasterPos3f(-0.85, 0.8, 0);
+	char mainmenu[] = "Spelling BEE ";
+	for (int i = 0; i < strlen(mainmenu); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, mainmenu[i]);
+		glutSwapBuffers();
+	}
 
 	glColor3f(1, 1, 1);
 	glRasterPos3f(-0.5, 0.6, 0);

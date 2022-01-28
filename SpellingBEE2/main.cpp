@@ -154,8 +154,15 @@ void display() {
 	//glLoadIdentity();
 
 	glColor3f(1, 1, 1);
+	glRasterPos3f(-0.85, 0.8, 0);
+	char gameTitle[] = "Spelling BEE ";
+	for (int i = 0; i < strlen(gameTitle); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, gameTitle[i]);
+		glutSwapBuffers();
+	}
+	glColor3f(1, 1, 1);
 	glRasterPos3f(-0.5, 0.6, 0);
-	char mainmenu[] = "Welcome to Spelling Bee ";
+	char mainmenu[] = "WELCOME ";
 	for (int i = 0; i < strlen(mainmenu); i++) {
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, mainmenu[i]);
 		glutSwapBuffers();
@@ -167,7 +174,7 @@ void display() {
 	glRasterPos3f(-0.5, 0.1, 0);
 	char next[] = " Press 1 - to Start ";
 	for (int i = 0; i < strlen(next); i++) {
-		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, next[i]);
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, next[i]);
 		glutSwapBuffers();
 	}
 
@@ -180,7 +187,7 @@ void display() {
 	glRasterPos3f(-0.5, -0.2, 0);
 	char instruction[] = " Press Z - to read instructions ";
 	for (int i = 0; i < strlen(instruction); i++) {
-		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, instruction[i]);
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, instruction[i]);
 		glutSwapBuffers();
 	}
 
@@ -193,7 +200,7 @@ void display() {
 	glRasterPos3f(-0.5, -0.5, 0);
 	char exit[] = " Press E - to exit the game ";
 	for (int i = 0; i < strlen(exit); i++) {
-		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, exit[i]);
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, exit[i]);
 		glutSwapBuffers();
 	}
 
