@@ -10,7 +10,11 @@ void gameInstructions();
 void gameDisplay1();
 void gameDisplay1Answer();
 void gameDisplay1Wrong();
+
 void gameDisplay2();
+void gameDisplay2Answer();
+void gameDisplay2Wrong();
+
 void gameDisplay3();
 void gameDisplay4();
 void gameDisplay5();
@@ -75,12 +79,26 @@ void keys(unsigned char key, int x, int y)
 		glutDisplayFunc(gameDisplay1Wrong);
 	glutPostRedisplay();
 
+	//answers to question 2
+	if (key == 'm')
+		glutDisplayFunc(gameDisplay2Answer);
+	glutPostRedisplay();
+	if (key == 'n')
+		glutDisplayFunc(gameDisplay2Wrong);
+	glutPostRedisplay();
+	if (key == 'o')
+		glutDisplayFunc(gameDisplay2Wrong);
+	glutPostRedisplay();
+	if (key == 'p')
+		glutDisplayFunc(gameDisplay2Wrong);
+	glutPostRedisplay();
+
 	//game instructions
 	if (key == 'z')
 		glutDisplayFunc(gameInstructions);
 	glutPostRedisplay();
 	if (key == 'e')
-		glutDisplayFunc(gameInstructions);
+		exit(EXIT_SUCCESS);
 	glutPostRedisplay();
 }
 
