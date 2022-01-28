@@ -2000,6 +2000,57 @@ void gameDisplay10()
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, next[i]);
 		glutSwapBuffers();
 	}
+	//choice A
+	glRasterPos3d(-0.45, 0.20, 0);
+
+	for (int i = 0; i < strlen(choice1); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, choice1[i]);
+		glutSwapBuffers();
+	}
+
+	//choice B
+	glRasterPos3d(0.05, 0.20, 0);
+
+	for (int i = 0; i < strlen(choice2); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, choice2[i]);
+		glutSwapBuffers();
+	}
+
+	//choice C
+	glRasterPos3d(-0.45, -0.20, 0);
+
+	for (int i = 0; i < strlen(choice3); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, choice3[i]);
+		glutSwapBuffers();
+	}
+
+	//choice D
+	glRasterPos3d(0.05, -0.20, 0);
+
+	for (int i = 0; i < strlen(choice4); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, choice4[i]);
+		glutSwapBuffers();
+	}
+
+
+	//Exit game
+	glColor3f(1, 1, 1);
+	glRasterPos3f(-0.5, -0.8, 0);
+
+	char exit[] = " Press X to go back to main menu ";
+	for (int i = 0; i < strlen(exit); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, exit[i]);
+		glutSwapBuffers();
+	}
+
+	//Next Page
+	glColor3f(1, 1, 1);
+	glRasterPos3f(-0.5, -1.0, 0);
+	char next[] = " END ";
+	for (int i = 0; i < strlen(next); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, next[i]);
+		glutSwapBuffers();
+	}
 
 
 }*/
