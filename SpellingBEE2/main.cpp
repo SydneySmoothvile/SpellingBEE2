@@ -6,7 +6,10 @@
 
 
 void display();
+void gameInstructions();
 void gameDisplay1();
+void gameDisplay1Answer();
+void gameDisplay1Wrong();
 void gameDisplay2();
 void gameDisplay3();
 void gameDisplay4();
@@ -57,8 +60,34 @@ void keys(unsigned char key, int x, int y)
 	if (key == '0')
 		glutDisplayFunc(gameDisplay10);
 	glutPostRedisplay();
+
+	//answers to question 1
+	if (key== 'b')
+		glutDisplayFunc(gameDisplay1Answer);
+	glutPostRedisplay();
+	if (key == 'a')
+		glutDisplayFunc(gameDisplay1Wrong);
+	glutPostRedisplay();
+	if (key == 'c')
+		glutDisplayFunc(gameDisplay1Wrong);
+	glutPostRedisplay();
+	if (key == 'd')
+		glutDisplayFunc(gameDisplay1Wrong);
+	glutPostRedisplay();
+
+	//game instructions
+	if (key == 'z')
+		glutDisplayFunc(gameInstructions);
+	glutPostRedisplay();
+	if (key == 'e')
+		glutDisplayFunc(gameInstructions);
+	glutPostRedisplay();
 }
 
+void myTimer(int val) {
+	glutDisplayFunc(display);
+	glutPostRedisplay();
+}
 int main(int argc, char** argv)
 {
 
@@ -66,7 +95,7 @@ int main(int argc, char** argv)
 	glutInitDisplayMode(GLUT_RGB);
 
 	glutInitWindowPosition(200,100);
-	glutInitWindowSize(700, 500);
+	glutInitWindowSize(900, 500);
 
 	
 	glutCreateWindow("SpellingBEE Game");
@@ -75,6 +104,7 @@ int main(int argc, char** argv)
 	//glutDisplayFunc(gameDisplay1);
 	// glutReshapeFunc(reshape);
 	glutKeyboardFunc(keys);
+	glutTimerFunc(2000, myTimer, 0);
 	
 	init();
 
@@ -95,20 +125,40 @@ void display() {
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, mainmenu[i]);
 		glutSwapBuffers();
 	}
-	//draw
-	glBegin(GL_POLYGON);
-
-	glVertex2f(0.5, 0.5);
-	glVertex2f(-0.5, 0.5);
-	glVertex2f(-0.5, -0.5);
-	glVertex2f(0.5, -0.5);
+	
 
 	//to start Page
-	glColor3f(1, 0, 0);
-	glRasterPos3f(-0.0, -0.0, 0);
-	char next[] = " Press 1 to Start ";
+	glColor3f(1, 1, 1);
+	glRasterPos3f(-0.5, 0.1, 0);
+	char next[] = " Press 1 - to Start ";
 	for (int i = 0; i < strlen(next); i++) {
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, next[i]);
+		glutSwapBuffers();
+	}
+
+	glEnd();
+
+	glFlush();
+
+	//to instruction Page
+	glColor3f(1, 1, 1);
+	glRasterPos3f(-0.5, -0.2, 0);
+	char instruction[] = " Press Z - to read instructions ";
+	for (int i = 0; i < strlen(instruction); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, instruction[i]);
+		glutSwapBuffers();
+	}
+
+	glEnd();
+
+	glFlush();
+
+	//to Exit game
+	glColor3f(1, 1, 1);
+	glRasterPos3f(-0.5, -0.5, 0);
+	char exit[] = " Press E - to exit the game ";
+	for (int i = 0; i < strlen(exit); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, exit[i]);
 		glutSwapBuffers();
 	}
 
