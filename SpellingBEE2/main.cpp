@@ -16,6 +16,9 @@ void gameDisplay2Answer();
 void gameDisplay2Wrong();
 
 void gameDisplay3();
+void gameDisplay3Answer();
+void gameDisplay3Wrong();
+
 void gameDisplay4();
 void gameDisplay5();
 void gameDisplay6();
@@ -91,6 +94,20 @@ void keys(unsigned char key, int x, int y)
 	glutPostRedisplay();
 	if (key == 'p')
 		glutDisplayFunc(gameDisplay2Wrong);
+	glutPostRedisplay();
+
+	//answers to question 3
+	if (key == 't')
+		glutDisplayFunc(gameDisplay3Wrong);
+	glutPostRedisplay();
+	if (key == 'u')
+		glutDisplayFunc(gameDisplay3Wrong);
+	glutPostRedisplay();
+	if (key == 'v')
+		glutDisplayFunc(gameDisplay3Answer);
+	glutPostRedisplay();
+	if (key == 'w')
+		glutDisplayFunc(gameDisplay3Wrong);
 	glutPostRedisplay();
 
 	//game instructions
