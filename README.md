@@ -11,5 +11,5 @@ In the event that the user picks the right choice, it turns green while the rest
 1. To start the game press One.
 2. To read game instructions press z
 3. To choose an answer select A, B, C or D
-SpellingBEE is an enhanced experience game for spellling developed using OpenGL
+To exit the game press E 
   
